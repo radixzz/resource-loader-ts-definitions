@@ -1,2 +1,2 @@
-# resource-loader-ts-definitions
-Typescript definitions for resource-loader lib
+# Resource Loader Typescript Definition
+From [this library](https://github.com/englercj/resource-loader)
