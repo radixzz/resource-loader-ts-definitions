@@ -91,6 +91,27 @@ declare class Resource {
     /** Marks the resource as complete. */
     complete(): void;
 
+    /** Dispatched when the resource beings to load. */
+    onStart: Signal;
+
+    /**
+     * Dispatched each time progress of this resource load updates.
+     * Not all resources types and loader systems can support this event
+     * so sometimes it may not be available. If the resource
+     * is being loaded on a modern browser, using XHR, and the remote server
+     * properly sets Content-Length headers, then this will be available.
+     */
+    onComplete: Signal;
+
+    /**
+    * Dispatched once this resource has loaded, if there was an error it will
+    * be in the `error` property.
+    */
+    onProgress: Signal;
+    
+    /** Dispatched after this resource has had all the *after* middleware run on it. */
+    onAfterMiddleware : Signal;
+
 }
 
 declare class SignalBinding {
